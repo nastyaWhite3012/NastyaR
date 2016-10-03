@@ -2,7 +2,7 @@ public class Main {
   /**
    * Class Main
    */
-  public static void main(String[] args) {
+  public static void main(String[] args) { //Calculates required operations 
     Calculator calc = new Calculator(); //Create an object calk in the class Calculator
     System.out.println("Enter 2 numbers.");
     double number1 = Double.parseDouble(args[0]);
