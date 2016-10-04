@@ -5,6 +5,13 @@ import java.util.Scanner;
  * of a quadratic equation
  */
 public class Main {
+  /**
+   * input coefficients of a
+   * quadratic equation and
+   * output the roots
+   *
+   * @param args - console arguments
+   */
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Enter a, b, c");
