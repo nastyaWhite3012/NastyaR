@@ -5,6 +5,12 @@ import java.util.Scanner;
  * type definition
  */
 public class Main {
+  /**
+   * input sides of the triangle and
+   * output type of the triangle
+   *
+   * @param args - console arguments
+   */
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Enter the sides of the triangle");
