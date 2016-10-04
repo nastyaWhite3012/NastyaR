@@ -6,10 +6,10 @@ import java.util.Scanner;
  */
 public class Main {
   public static void main(String[] args) {
-    Solve s = new Solve();
     Scanner scanner = new Scanner(System.in);
     System.out.println("Enter a, b, c");
     try {
+      Solve s = new Solve();
       double a = scanner.nextDouble();
       double b = scanner.nextDouble();
       double c = scanner.nextDouble();

@@ -3,12 +3,25 @@
  * quadratic equation
  */
 public class Solve {
-
+  /**
+   * find discriminant
+   *
+   * @param a - console argument
+   * @param b - console argument
+   * @param c - console argument
+   * @return discriminant
+   */
   public double discriminant(double a, double b, double c) {
-    //find a discriminant
     return b * b - 4 * a * c;
   }
 
+  /**
+   * find roots of a quadratic equation
+   *
+   * @param a - console argument
+   * @param b - console argument
+   * @param c - console argument
+   */
   public void solve(double a, double b, double c) {
     //solve a quadratic equation
     if (Double.isInfinite(1 / discriminant(a, b, c))) {
