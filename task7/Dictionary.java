@@ -14,10 +14,15 @@ public class Dictionary {
   public boolean dict(String s) {
     String[] dictionary = {"work", "hard", "anywhere", "everyday"};
     int isContain = 0;
-    for (int i = 0; i < dictionary.length; i++) {
-      if (s.contains(dictionary[i])) {
-        isContain++;
+    String[] d = s.split("[\\p{P} ]+");
+    for (int i = 0; i < d.length; i++) {
+      for (int j = 0; j < dictionary.length; j++) {
+        if (d[i].equals(dictionary[j])) {
+          isContain++;
+        }
       }
+//      if (s.contains(dictionary[i])) {
+
     }
     if (isContain != 0) {
       return true;
