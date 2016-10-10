@@ -1,7 +1,7 @@
 /**
  * 4/ It contains a word from a dictionary
  */
-public class Dictionary {
+public class Dictionary extends Builder {
   /**
    * Checking if the line contains
    * the words from the dictionary
@@ -11,7 +11,7 @@ public class Dictionary {
    * the words from the dictionary
    * otherwise false
    */
-  public boolean dict(String s) {
+  public boolean check(String s) {
     String[] dictionary = {"work", "hard", "anywhere", "everyday"};
     int isContain = 0;
     String[] d = s.split("[\\p{P} ]+");
