@@ -9,7 +9,7 @@ public class Check {
    *
    * @param s - entered line
    */
-  public void check(String s) {
+  public static void check(String s) {
     MoreThenFive m = new MoreThenFive();
     Dictionary d = new Dictionary();
     NoNumbers nN = new NoNumbers();
@@ -20,19 +20,23 @@ public class Check {
       System.out.println("Empty line!");
       System.exit(0);
     }
-    if (nN.noNumbers(s)) {
+    if (nN.check(s)) {
       System.out.println("This line doesn't contain numbers.");
     }
-    if (n.isNumber(s)) {
+
+    if (n.check(s)) {
       System.out.println("This line contains only numbers.");
     }
-    if (m.moreThenFive(s)) {
+
+    if (m.check(s)) {
+      System.out.println("This line contains more than 5 words.");
+    }
+
+    if (d.check(s)) {
       System.out.println("This line contains more than 5 words. ");
     }
-    if (d.dict(s)) {
-      System.out.println("This line contains words from dictionary.");
-    }
-    if (!n.isNumber(s) && !nN.noNumbers(s) && !m.moreThenFive(s) && !d.dict(s)) {
+
+    if (!n.check(s) && !nN.check(s) && !m.check(s) && !d.check(s)) {
       // condition if the line doesn't contain any rule
       System.out.println("The line doesn't contain any rule!");
     }
