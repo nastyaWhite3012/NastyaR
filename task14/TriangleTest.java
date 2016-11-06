@@ -48,6 +48,12 @@ public class TriangleTest {
         {false, Double.NEGATIVE_INFINITY, new Double(8.0), new Double(9.0)},
         {false, new Double(7.0), Double.NEGATIVE_INFINITY, new Double(9.0)},
         {false, new Double(7.0), new Double(8.0), Double.NEGATIVE_INFINITY},
+        {false, Double.MIN_VALUE, new Double(8.0), new Double(9.0)},
+        {false, new Double(7.0), Double.MIN_VALUE, new Double(9.0)},
+        {false, new Double(7.0), new Double(8.0), Double.MIN_VALUE},
+        {false, Double.MAX_VALUE, new Double(8.0), new Double(9.0)},
+        {false, new Double(7.0), Double.MAX_VALUE, new Double(9.0)},
+        {false, new Double(7.0), new Double(8.0), Double.MAX_VALUE},
     };
   }
 
