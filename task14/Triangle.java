@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 /**
  * Class for triangles' types
  */
@@ -10,8 +12,10 @@ public class Triangle {
    * @param c - console argument
    * @return true, if triangle exists otherwise false
    */
-  public boolean isExist(double a, double b, double c) {
-    if (a > 0 && b > 0 && c > 0 && a + b > c && b + c > a && a + c > b) {
+  public boolean isExist(BigDecimal a, BigDecimal b, BigDecimal c) {
+    BigDecimal val = new BigDecimal("0.0");
+    if (a.compareTo(val) == 1 && b.compareTo(val) == 1 && c.compareTo(val) == 1 && a.add(b).compareTo(c) == 1
+        && b.add(c).compareTo(a) == 1 && a.add(c).compareTo(b) == 1) {
       return true;
     } else {
       return false;
@@ -26,8 +30,8 @@ public class Triangle {
    * @param c - console argument
    * @return true, if triangle is equilateral otherwise false
    */
-  public boolean isEquilateral(double a, double b, double c) {
-    if (Double.isInfinite(1 / (a - b)) && Double.isInfinite(1 / (b - c)) && Double.isInfinite(1 / (a - c))) {
+  public boolean isEquilateral(BigDecimal a, BigDecimal b, BigDecimal c) {
+    if (a.compareTo(b) == 0 && b.compareTo(c) == 0 && c.compareTo(a) == 0) {
       return true;
     } else {
       return false;
@@ -42,11 +46,9 @@ public class Triangle {
    * @param c - console argument
    * @return true, if triangle is isosceles otherwise false
    */
-  public boolean IsIsosceles(double a, double b, double c) {
-    boolean sideOne = Double.isInfinite(1 / (a - b)) && Math.abs(b - c) > 0;
-    boolean sideTwo = Double.isInfinite(1 / (b - c)) && Math.abs(a - b) > 0;
-    boolean sideThree = Double.isInfinite(1 / (a - c)) && Math.abs(b - c) > 0;
-    if (sideOne || sideTwo || sideThree) {
+  public boolean IsIsosceles(BigDecimal a, BigDecimal b, BigDecimal c) {
+    if (a.compareTo(b) == 0 && a.compareTo(c) == -1 || a.compareTo(c) == 0 && a.compareTo(b) == -1 ||
+        c.compareTo(b) == 0 && c.compareTo(a) == -1) {
       return true;
     } else {
       return false;

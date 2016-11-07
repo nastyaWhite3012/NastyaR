@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.Scanner;
 
 /**
@@ -15,9 +16,9 @@ public class Main {
     Scanner scanner = new Scanner(System.in);
     System.out.println("Enter the sides of the triangle");
     Triangle tr = new Triangle();
-    double a = scanner.nextDouble();
-    double b = scanner.nextDouble();
-    double c = scanner.nextDouble();
+    BigDecimal a = scanner.nextBigDecimal();
+    BigDecimal b = scanner.nextBigDecimal();
+    BigDecimal c = scanner.nextBigDecimal();
     if (tr.isExist(a, b, c)) {
       if (tr.isEquilateral(a, b, c)) {
         System.out.println("This is equilateral triangle.");

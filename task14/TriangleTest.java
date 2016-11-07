@@ -1,6 +1,8 @@
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import java.math.BigDecimal;
+
 import static org.testng.Assert.*;
 
 public class TriangleTest {
@@ -8,53 +10,42 @@ public class TriangleTest {
   @DataProvider(name = "DataProviderIsExist")
   public Object[][] isExist() {
     return new Object[][]{
-        {true, new Double(7.0), new Double(8.0), new Double(9.0)},
-        {false, new Double(0.0), new Double(8.0), new Double(9.0)},
-        {false, new Double(7.0), new Double(0.0), new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0), new Double(0.0)},
-        {false, new Double(-7.0), new Double(8.0), new Double(9.0)},
-        {false, new Double(7.0), new Double(-8.0), new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0), new Double(-9.0)},
-        {true, new Double(7.0 / 1.0), new Double(8.0), new Double(9.0)},
-        {true, new Double(7.0), new Double(8.0 / 1.0), new Double(9.0)},
-        {true, new Double(7.0), new Double(8.0), new Double(9.0 / 1.0)},
-        {true, new Double(7.0 * 1.0), new Double(8.0), new Double(9.0)},
-        {true, new Double(7.0), new Double(8.0 * 1.0), new Double(9.0)},
-        {true, new Double(7.0), new Double(8.0), new Double(9.0 * 1.0)},
-        {true, new Double(7.0 + 1.0), new Double(8.0), new Double(9.0)},
-        {true, new Double(7.0), new Double(8.0 + 1.0), new Double(9.0)},
-        {true, new Double(7.0), new Double(8.0), new Double(9.0 + 1.0)},
-        {true, new Double(7.0 - 2.0), new Double(8.0), new Double(9.0)},
-        {true, new Double(7.0), new Double(8.0 - 2.0), new Double(9.0)},
-        {true, new Double(7.0), new Double(8.0), new Double(9.0 - 3.0)},
-        {false, new Double(7.0 / 7.0), new Double(8.0), new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0 / 8.0), new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0), new Double(9.0 / 9.0)},
-        {false, new Double(7.0 * 7.0), new Double(8.0), new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0 * 8.0), new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0), new Double(9.0 * 9.0)},
-        {false, new Double(7.0 + 10.0), new Double(8.0), new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0 + 8.0), new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0), new Double(9.0 + 9.0)},
-        {false, new Double(7.0 - 7.0), new Double(8.0), new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0 - 8.0), new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0), new Double(9.0 - 9.0)},
-        {false, Double.NaN, new Double(8.0), new Double(9.0)},
-        {false, new Double(7.0), Double.NaN, new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0), Double.NaN},
-        {false, Double.POSITIVE_INFINITY, new Double(8.0), new Double(9.0)},
-        {false, new Double(7.0), Double.POSITIVE_INFINITY, new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0), Double.POSITIVE_INFINITY},
-        {false, Double.NEGATIVE_INFINITY, new Double(8.0), new Double(9.0)},
-        {false, new Double(7.0), Double.NEGATIVE_INFINITY, new Double(9.0)},
-        {false, new Double(7.0), new Double(8.0), Double.NEGATIVE_INFINITY},
-        {true, Double.MIN_VALUE, Double.MIN_VALUE, Double.MIN_VALUE},
-        {true, Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE},
+        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(0.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(0.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(0.0)},
+        {false, BigDecimal.valueOf(-7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(-8.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(-9.0)},
+        {true, BigDecimal.valueOf(7.0 / 1.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
+        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 / 1.0), BigDecimal.valueOf(9.0)},
+        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 / 1.0)},
+        {true, BigDecimal.valueOf(7.0 * 1.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
+        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 * 1.0), BigDecimal.valueOf(9.0)},
+        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 * 1.0)},
+        {true, BigDecimal.valueOf(7.0 + 1.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
+        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 + 1.0), BigDecimal.valueOf(9.0)},
+        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 + 1.0)},
+        {true, BigDecimal.valueOf(7.0 - 2.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
+        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 - 2.0), BigDecimal.valueOf(9.0)},
+        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 - 3.0)},
+        {false, BigDecimal.valueOf(7.0 / 7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 / 8.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 / 9.0)},
+        {false, BigDecimal.valueOf(7.0 * 7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 * 8.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 * 9.0)},
+        {false, BigDecimal.valueOf(7.0 + 10.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 + 8.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 + 9.0)},
+        {false, BigDecimal.valueOf(7.0 - 7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 - 8.0), BigDecimal.valueOf(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 - 9.0)},
     };
   }
 
   @Test(dataProvider = "DataProviderIsExist")
-  public void testIsExist(boolean expected, double a, double b, double c) {
+  public void testIsExist(boolean expected, BigDecimal a, BigDecimal b, BigDecimal c) {
     Triangle triangle = new Triangle();
     assertEquals(expected, triangle.isExist(a, b, c));
   }
@@ -62,14 +53,14 @@ public class TriangleTest {
   @DataProvider(name = "DataProviderIsEquilateral")
   public Object[][] isEquilateral() {
     return new Object[][]{
-        {true, new Double(7.0), new Double(7.0), new Double(7.0)},
-        {false, new Double(7.0), new Double(7.0), new Double(8.0)},
-        {false, new Double(7.0), new Double(8.0), new Double(9.0)},
+        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(7.0), BigDecimal.valueOf(7.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
     };
   }
 
   @Test(dataProvider = "DataProviderIsEquilateral")
-  public void testIsEquilateral(boolean expected, double a, double b, double c) {
+  public void testIsEquilateral(boolean expected, BigDecimal a, BigDecimal b, BigDecimal c) {
     Triangle triangle = new Triangle();
     assertEquals(expected, triangle.isEquilateral(a, b, c));
   }
@@ -77,14 +68,14 @@ public class TriangleTest {
   @DataProvider(name = "DataProviderIsIsosceles")
   public Object[][] isIsosceles() {
     return new Object[][]{
-        {false, new Double(7.0), new Double(7.0), new Double(7.0)},
-        {true, new Double(7.0), new Double(7.0), new Double(8.0)},
-        {false, new Double(7.0), new Double(8.0), new Double(9.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(7.0), BigDecimal.valueOf(7.0)},
+        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0)},
+        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
     };
   }
 
   @Test(dataProvider = "DataProviderIsIsosceles")
-  public void testIsIsosceles(boolean expected, double a, double b, double c) {
+  public void testIsIsosceles(boolean expected, BigDecimal a, BigDecimal b, BigDecimal c) {
     Triangle triangle = new Triangle();
     assertEquals(expected, triangle.IsIsosceles(a, b, c));
   }
