@@ -1,82 +1,77 @@
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.w3c.dom.Document;
+import org.w3c.dom.NamedNodeMap;
+import org.w3c.dom.NodeList;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
 import java.math.BigDecimal;
 
 import static org.testng.Assert.*;
 
 public class TriangleTest {
 
-  @DataProvider(name = "DataProviderIsExist")
-  public Object[][] isExist() {
-    return new Object[][]{
-        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(0.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(0.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(0.0)},
-        {false, BigDecimal.valueOf(-7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(-8.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(-9.0)},
-        {true, BigDecimal.valueOf(7.0 / 1.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 / 1.0), BigDecimal.valueOf(9.0)},
-        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 / 1.0)},
-        {true, BigDecimal.valueOf(7.0 * 1.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 * 1.0), BigDecimal.valueOf(9.0)},
-        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 * 1.0)},
-        {true, BigDecimal.valueOf(7.0 + 1.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 + 1.0), BigDecimal.valueOf(9.0)},
-        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 + 1.0)},
-        {true, BigDecimal.valueOf(7.0 - 2.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 - 2.0), BigDecimal.valueOf(9.0)},
-        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 - 3.0)},
-        {false, BigDecimal.valueOf(7.0 / 7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 / 8.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 / 9.0)},
-        {false, BigDecimal.valueOf(7.0 * 7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 * 8.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 * 9.0)},
-        {false, BigDecimal.valueOf(7.0 + 10.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 + 8.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 + 9.0)},
-        {false, BigDecimal.valueOf(7.0 - 7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0 - 8.0), BigDecimal.valueOf(9.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0 - 9.0)},
-    };
+  public static final String PATH = ".\\ddt.xml";
+  private static final String NEGATIVE = "negative";
+  private static final String POSITIVE = "positive";
+  private static final String NULLSIDE = "nullSide";
+  private static final String SIDE_A = "side_a";
+  private static final String SIDE_B = "side_b";
+  private static final String SIDE_C = "side_c";
+  private static final String EXPECTED = "expected";
+
+  @DataProvider(name = "negativeFromXml")
+  public Object[][] readNegativeXML() throws Exception {
+    File inputFile = new File(PATH);
+    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    DocumentBuilder builder = factory.newDocumentBuilder();
+
+    Document document = builder.parse(inputFile);
+    NodeList nodes = document.getElementsByTagName(NEGATIVE);
+    Object[][] result = new Object[nodes.getLength()][];
+    for (int i = 0; i < nodes.getLength(); i++) {
+      NamedNodeMap attrs = nodes.item(i).getAttributes();
+      result[i] = new Object[]{
+          new Boolean(attrs.getNamedItem(EXPECTED).getNodeValue()),
+          new BigDecimal(attrs.getNamedItem(SIDE_A).getNodeValue()),
+          new BigDecimal(attrs.getNamedItem(SIDE_B).getNodeValue()),
+          new BigDecimal(attrs.getNamedItem(SIDE_C).getNodeValue())
+      };
+    }
+    return result;
   }
 
-  @Test(dataProvider = "DataProviderIsExist")
-  public void testIsExist(boolean expected, BigDecimal a, BigDecimal b, BigDecimal c) {
+  @Test(dataProvider = "negativeFromXml")
+  public void testIsExistNegative(boolean expected, BigDecimal a, BigDecimal b, BigDecimal c) {
     Triangle triangle = new Triangle();
     assertEquals(expected, triangle.isExist(a, b, c));
   }
 
-  @DataProvider(name = "DataProviderIsEquilateral")
-  public Object[][] isEquilateral() {
-    return new Object[][]{
-        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(7.0), BigDecimal.valueOf(7.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-    };
+  @DataProvider(name = "positiveFromXml")
+  public Object[][] readXMLPositive() throws Exception {
+    File inputFile = new File(PATH);
+    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+    DocumentBuilder builder = factory.newDocumentBuilder();
+    Document document = builder.parse(inputFile);
+    NodeList nodes = document.getElementsByTagName(POSITIVE);
+    Object[][] result = new Object[nodes.getLength()][];
+    for (int i = 0; i < nodes.getLength(); i++) {
+      NamedNodeMap attrs = nodes.item(i).getAttributes();
+      result[i] = new Object[]{
+          new Boolean(attrs.getNamedItem(EXPECTED).getNodeValue()),
+          new BigDecimal(attrs.getNamedItem(SIDE_A).getNodeValue()),
+          new BigDecimal(attrs.getNamedItem(SIDE_B).getNodeValue()),
+          new BigDecimal(attrs.getNamedItem(SIDE_C).getNodeValue()),
+      };
+    }
+    return result;
   }
 
-  @Test(dataProvider = "DataProviderIsEquilateral")
-  public void testIsEquilateral(boolean expected, BigDecimal a, BigDecimal b, BigDecimal c) {
+  @Test(dataProvider = "positiveFromXml")
+  public void testIsExistPositive(boolean expected, BigDecimal a, BigDecimal b, BigDecimal c) {
     Triangle triangle = new Triangle();
-    assertEquals(expected, triangle.isEquilateral(a, b, c));
-  }
-
-  @DataProvider(name = "DataProviderIsIsosceles")
-  public Object[][] isIsosceles() {
-    return new Object[][]{
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(7.0), BigDecimal.valueOf(7.0)},
-        {true, BigDecimal.valueOf(7.0), BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0)},
-        {false, BigDecimal.valueOf(7.0), BigDecimal.valueOf(8.0), BigDecimal.valueOf(9.0)},
-    };
-  }
-
-  @Test(dataProvider = "DataProviderIsIsosceles")
-  public void testIsIsosceles(boolean expected, BigDecimal a, BigDecimal b, BigDecimal c) {
-    Triangle triangle = new Triangle();
-    assertEquals(expected, triangle.IsIsosceles(a, b, c));
+    assertEquals(expected, triangle.isExist(a, b, c));
   }
 }
