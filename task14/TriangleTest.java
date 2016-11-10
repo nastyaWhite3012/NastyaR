@@ -38,10 +38,6 @@ public class TriangleTest {
 
   @DataProvider(name = "negativeFromXml")
   public Object[][] readNegativeXML() throws Exception {
-//    File inputFile = new File(PATH);
-//    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//    DocumentBuilder builder = factory.newDocumentBuilder();
-//    Document document = builder.parse(inputFile);
     NodeList nodes = document.getElementsByTagName(NEGATIVE);
     Object[][] result = new Object[nodes.getLength()][];
     for (int i = 0; i < nodes.getLength(); i++) {
@@ -64,10 +60,6 @@ public class TriangleTest {
 
   @DataProvider(name = "positiveFromXml")
   public Object[][] readXMLPositive() throws Exception {
-//    File inputFile = new File(PATH);
-//    DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-//    DocumentBuilder builder = factory.newDocumentBuilder();
-//    Document document = builder.parse(inputFile);
     NodeList nodes = document.getElementsByTagName(POSITIVE);
     Object[][] result = new Object[nodes.getLength()][];
     for (int i = 0; i < nodes.getLength(); i++) {
