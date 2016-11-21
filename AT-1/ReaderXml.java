@@ -40,7 +40,7 @@ public class ReaderXml {
     NodeList nodeList = document.getElementsByTagName("command");
     for (int i = 0; i < nodeList.getLength(); i++) {
       NamedNodeMap attrs = nodeList.item(i).getAttributes();
-      String command = attrs.getNamedItem("atr").getNodeValue();
+      String command = attrs.getNamedItem("arg").getNodeValue();
       listLine.add(command);
     }
     return listLine;
