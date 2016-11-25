@@ -1,5 +1,0 @@
-open "https://www.epam.com/" "30"
-checkLinkPresentByHref "/solutions"
-checkLinkPresentByName "Solutions"
-checkPageTitle "EPAM | Software Product Development Services"
-checkPageContains "ENGINEERING IS IN OUR DNA."
