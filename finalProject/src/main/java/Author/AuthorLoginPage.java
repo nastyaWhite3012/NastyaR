@@ -24,6 +24,7 @@ public class AuthorLoginPage {
    * open login page
    */
   public void openLoginPage() {
+
     driver.get(URL_LOGIN_PAGE);
   }
 
@@ -53,5 +54,17 @@ public class AuthorLoginPage {
   public AuthorHomePage enterLoginPageAuthor() {
     driver.findElement(By.id("wp-submit")).click();
     return new AuthorHomePage((ChromeDriver) driver);
+  }
+
+  public String errorMessage() {
+    return driver.findElement(By.linkText("Lost your password?")).getText();
+  }
+
+  public String fieldIsEmpty() {
+    return driver.findElement(By.id("login_error")).getText();
+  }
+
+  public String usernameIsEmpty() {
+    return driver.findElement(By.id("login_error")).getText();
   }
 }

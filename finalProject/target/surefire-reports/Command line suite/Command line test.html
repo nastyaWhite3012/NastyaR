@@ -1,0 +1,204 @@
+<html>
+<head>
+<title>TestNG:  Command line test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Command line test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>25/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Sun Dec 18 14:28:26 GMT+03:00 2016</td>
+</tr>
+<tr><td>Total time:</td><td>156 seconds (156821 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='TestSubscriber.testAddComment()'><b>testAddComment</b><br>Test class: TestSubscriber</td>
+<td></td>
+<td>2</td>
+<td>TestSubscriber@1b6d4ae</td></tr>
+<tr>
+<td title='TestAuthor.testAddPost()'><b>testAddPost</b><br>Test class: TestAuthor</td>
+<td></td>
+<td>1</td>
+<td>TestAuthor@13fcdbd</td></tr>
+<tr>
+<td title='TestEditor.testAddPost()'><b>testAddPost</b><br>Test class: TestEditor</td>
+<td></td>
+<td>2</td>
+<td>TestEditor@137cf78</td></tr>
+<tr>
+<td title='TestWrongData.testAuthorWrongPassword()'><b>testAuthorWrongPassword</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>1</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestWrongData.testAuthorWrongUsername()'><b>testAuthorWrongUsername</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>1</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestWrongData.testAuthorWrongUsernameAndPassword()'><b>testAuthorWrongUsernameAndPassword</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>1</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestWrongData.testContributerWrongPassword()'><b>testContributerWrongPassword</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>1</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestWrongData.testContributerWrongUsername()'><b>testContributerWrongUsername</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>1</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestWrongData.testContributerWrongUsernameAndPassword()'><b>testContributerWrongUsernameAndPassword</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>1</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestWrongData.testEditorWrongPassword()'><b>testEditorWrongPassword</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>1</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestWrongData.testEditorWrongUsername()'><b>testEditorWrongUsername</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>1</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestWrongData.testEditorWrongUsernameAndPassword()'><b>testEditorWrongUsernameAndPassword</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>1</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestAuthor.testLoginAuthor()'><b>testLoginAuthor</b><br>Test class: TestAuthor</td>
+<td></td>
+<td>0</td>
+<td>TestAuthor@13fcdbd</td></tr>
+<tr>
+<td title='TestContributer.testLoginContributer()'><b>testLoginContributer</b><br>Test class: TestContributer</td>
+<td></td>
+<td>2</td>
+<td>TestContributer@1b52d12</td></tr>
+<tr>
+<td title='TestEditor.testLoginEditor()'><b>testLoginEditor</b><br>Test class: TestEditor</td>
+<td></td>
+<td>0</td>
+<td>TestEditor@137cf78</td></tr>
+<tr>
+<td title='TestSubscriber.testLoginSubscriber()'><b>testLoginSubscriber</b><br>Test class: TestSubscriber</td>
+<td></td>
+<td>0</td>
+<td>TestSubscriber@1b6d4ae</td></tr>
+<tr>
+<td title='TestEditor.testPublish()'><b>testPublish</b><br>Test class: TestEditor</td>
+<td></td>
+<td>2</td>
+<td>TestEditor@137cf78</td></tr>
+<tr>
+<td title='TestAuthor.testPublishPost()'><b>testPublishPost</b><br>Test class: TestAuthor</td>
+<td></td>
+<td>2</td>
+<td>TestAuthor@13fcdbd</td></tr>
+<tr>
+<td title='TestWrongData.testSubscriberWrongPassword()'><b>testSubscriberWrongPassword</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>1</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestWrongData.testSubscriberWrongUsername()'><b>testSubscriberWrongUsername</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>6</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestWrongData.testSubscriberWrongUsernameAndPassword()'><b>testSubscriberWrongUsernameAndPassword</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>0</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestAuthor.testToTrash()'><b>testToTrash</b><br>Test class: TestAuthor</td>
+<td></td>
+<td>1</td>
+<td>TestAuthor@13fcdbd</td></tr>
+<tr>
+<td title='TestEditor.testToTrash()'><b>testToTrash</b><br>Test class: TestEditor</td>
+<td></td>
+<td>1</td>
+<td>TestEditor@137cf78</td></tr>
+<tr>
+<td title='TestWrongData.testWithoutNickname()'><b>testWithoutNickname</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>1</td>
+<td>TestWrongData@17c74e5</td></tr>
+<tr>
+<td title='TestWrongData.testWithoutPassword()'><b>testWithoutPassword</b><br>Test class: TestWrongData</td>
+<td></td>
+<td>1</td>
+<td>TestWrongData@17c74e5</td></tr>
+</table><p>
+</body>
+</html>

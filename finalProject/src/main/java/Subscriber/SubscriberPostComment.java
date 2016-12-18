@@ -22,15 +22,15 @@ public class SubscriberPostComment {
   /**
    * go to test
    */
-  public void goToTest() {
-    driver.findElement(By.id("wp-admin-bar-site-name")).click();
+  public void goToDashboard() {
+    driver.findElement(By.className("wp-menu-name")).click();
   }
 
   /**
    * go to post
    */
   public void goToPost() {
-    driver.findElement(By.className("entry-title")).click();
+    driver.findElement(By.linkText("Hello world!")).click();
   }
 
   /**
@@ -38,16 +38,19 @@ public class SubscriberPostComment {
    *
    * @param comment - added comment
    */
-  public void addComment(String comment) {
+  public void writeComment(String comment) {
     driver.findElement(By.id("comment")).sendKeys(comment);
   }
 
+  public void addComment() {
+    driver.findElement(By.className("submit")).click();
+  }
   /**
    * find word "Replay" after added comment
    *
    * @return "Reply"
    */
   public String getPostCommentPageUrl() {
-    return driver.findElement(By.className("reply")).getText();
+    return driver.findElement(By.className("comment-awaiting-moderation")).getText();
   }
 }

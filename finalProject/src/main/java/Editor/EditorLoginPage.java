@@ -54,4 +54,8 @@ public class EditorLoginPage {
     driver.findElement(By.id("wp-submit")).click();
     return new EditorHomePage((ChromeDriver) driver);
   }
+
+  public String errorMessage() {
+    return driver.findElement(By.linkText("Lost your password?")).getText();
+  }
 }

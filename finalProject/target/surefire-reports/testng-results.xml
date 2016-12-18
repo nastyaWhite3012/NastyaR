@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="25" passed="25">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="156821" started-at="2016-12-18T11:28:26Z" finished-at="2016-12-18T11:31:03Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="156821" started-at="2016-12-18T11:28:26Z" finished-at="2016-12-18T11:31:03Z">
+      <class name="TestWrongData">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="1549" started-at="2016-12-18T14:29:42Z" finished-at="2016-12-18T14:29:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testAuthorWrongPassword()[pri:0, instance:TestWrongData@17c74e5]" name="testAuthorWrongPassword" duration-ms="1581" started-at="2016-12-18T14:29:44Z" finished-at="2016-12-18T14:29:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAuthorWrongPassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2320" started-at="2016-12-18T14:29:45Z" finished-at="2016-12-18T14:29:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="1405" started-at="2016-12-18T14:29:47Z" finished-at="2016-12-18T14:29:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testAuthorWrongUsername()[pri:0, instance:TestWrongData@17c74e5]" name="testAuthorWrongUsername" duration-ms="1451" started-at="2016-12-18T14:29:49Z" finished-at="2016-12-18T14:29:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAuthorWrongUsername -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2328" started-at="2016-12-18T14:29:50Z" finished-at="2016-12-18T14:29:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="1336" started-at="2016-12-18T14:29:53Z" finished-at="2016-12-18T14:29:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testAuthorWrongUsernameAndPassword()[pri:0, instance:TestWrongData@17c74e5]" name="testAuthorWrongUsernameAndPassword" duration-ms="1540" started-at="2016-12-18T14:29:54Z" finished-at="2016-12-18T14:29:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAuthorWrongUsernameAndPassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2316" started-at="2016-12-18T14:29:56Z" finished-at="2016-12-18T14:29:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="1380" started-at="2016-12-18T14:29:58Z" finished-at="2016-12-18T14:29:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testContributerWrongPassword()[pri:0, instance:TestWrongData@17c74e5]" name="testContributerWrongPassword" duration-ms="1624" started-at="2016-12-18T14:29:59Z" finished-at="2016-12-18T14:30:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testContributerWrongPassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2323" started-at="2016-12-18T14:30:01Z" finished-at="2016-12-18T14:30:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="1502" started-at="2016-12-18T14:30:03Z" finished-at="2016-12-18T14:30:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testContributerWrongUsername()[pri:0, instance:TestWrongData@17c74e5]" name="testContributerWrongUsername" duration-ms="1345" started-at="2016-12-18T14:30:05Z" finished-at="2016-12-18T14:30:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testContributerWrongUsername -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2325" started-at="2016-12-18T14:30:06Z" finished-at="2016-12-18T14:30:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="1593" started-at="2016-12-18T14:30:08Z" finished-at="2016-12-18T14:30:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testContributerWrongUsernameAndPassword()[pri:0, instance:TestWrongData@17c74e5]" name="testContributerWrongUsernameAndPassword" duration-ms="1446" started-at="2016-12-18T14:30:10Z" finished-at="2016-12-18T14:30:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testContributerWrongUsernameAndPassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2315" started-at="2016-12-18T14:30:11Z" finished-at="2016-12-18T14:30:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="1572" started-at="2016-12-18T14:30:14Z" finished-at="2016-12-18T14:30:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testEditorWrongPassword()[pri:0, instance:TestWrongData@17c74e5]" name="testEditorWrongPassword" duration-ms="1507" started-at="2016-12-18T14:30:15Z" finished-at="2016-12-18T14:30:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEditorWrongPassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2325" started-at="2016-12-18T14:30:17Z" finished-at="2016-12-18T14:30:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="1660" started-at="2016-12-18T14:30:19Z" finished-at="2016-12-18T14:30:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testEditorWrongUsername()[pri:0, instance:TestWrongData@17c74e5]" name="testEditorWrongUsername" duration-ms="1394" started-at="2016-12-18T14:30:21Z" finished-at="2016-12-18T14:30:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEditorWrongUsername -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2318" started-at="2016-12-18T14:30:22Z" finished-at="2016-12-18T14:30:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="2171" started-at="2016-12-18T14:30:24Z" finished-at="2016-12-18T14:30:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testEditorWrongUsernameAndPassword()[pri:0, instance:TestWrongData@17c74e5]" name="testEditorWrongUsernameAndPassword" duration-ms="1555" started-at="2016-12-18T14:30:27Z" finished-at="2016-12-18T14:30:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEditorWrongUsernameAndPassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2314" started-at="2016-12-18T14:30:28Z" finished-at="2016-12-18T14:30:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="2053" started-at="2016-12-18T14:30:31Z" finished-at="2016-12-18T14:30:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testSubscriberWrongPassword()[pri:0, instance:TestWrongData@17c74e5]" name="testSubscriberWrongPassword" duration-ms="1596" started-at="2016-12-18T14:30:33Z" finished-at="2016-12-18T14:30:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSubscriberWrongPassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2320" started-at="2016-12-18T14:30:34Z" finished-at="2016-12-18T14:30:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="2105" started-at="2016-12-18T14:30:36Z" finished-at="2016-12-18T14:30:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testSubscriberWrongUsername()[pri:0, instance:TestWrongData@17c74e5]" name="testSubscriberWrongUsername" duration-ms="6230" started-at="2016-12-18T14:30:39Z" finished-at="2016-12-18T14:30:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSubscriberWrongUsername -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2326" started-at="2016-12-18T14:30:45Z" finished-at="2016-12-18T14:30:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="2035" started-at="2016-12-18T14:30:47Z" finished-at="2016-12-18T14:30:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testSubscriberWrongUsernameAndPassword()[pri:0, instance:TestWrongData@17c74e5]" name="testSubscriberWrongUsernameAndPassword" duration-ms="998" started-at="2016-12-18T14:30:49Z" finished-at="2016-12-18T14:30:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSubscriberWrongUsernameAndPassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2317" started-at="2016-12-18T14:30:50Z" finished-at="2016-12-18T14:30:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="1431" started-at="2016-12-18T14:30:52Z" finished-at="2016-12-18T14:30:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testWithoutNickname()[pri:0, instance:TestWrongData@17c74e5]" name="testWithoutNickname" duration-ms="1537" started-at="2016-12-18T14:30:54Z" finished-at="2016-12-18T14:30:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWithoutNickname -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2320" started-at="2016-12-18T14:30:55Z" finished-at="2016-12-18T14:30:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestWrongData@17c74e5]" name="setUp" is-config="true" duration-ms="1403" started-at="2016-12-18T14:30:58Z" finished-at="2016-12-18T14:30:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testWithoutPassword()[pri:0, instance:TestWrongData@17c74e5]" name="testWithoutPassword" duration-ms="1563" started-at="2016-12-18T14:30:59Z" finished-at="2016-12-18T14:31:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWithoutPassword -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestWrongData@17c74e5]" name="tearDown" is-config="true" duration-ms="2314" started-at="2016-12-18T14:31:01Z" finished-at="2016-12-18T14:31:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestWrongData -->
+      <class name="TestAuthor">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestAuthor@13fcdbd]" name="beforeTest" is-config="true" duration-ms="219" started-at="2016-12-18T14:28:26Z" finished-at="2016-12-18T14:28:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestContributer@1b52d12]" name="beforeTest" is-config="true" duration-ms="17" started-at="2016-12-18T14:28:27Z" finished-at="2016-12-18T14:28:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="beforeTst()[pri:0, instance:TestEditor@137cf78]" name="beforeTst" is-config="true" duration-ms="18" started-at="2016-12-18T14:28:27Z" finished-at="2016-12-18T14:28:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTst -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestSubscriber@1b6d4ae]" name="beforeTest" is-config="true" duration-ms="19" started-at="2016-12-18T14:28:27Z" finished-at="2016-12-18T14:28:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:TestWrongData@17c74e5]" name="beforeTest" is-config="true" duration-ms="78" started-at="2016-12-18T14:28:27Z" finished-at="2016-12-18T14:28:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTest -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestAuthor@13fcdbd]" name="setUp" is-config="true" duration-ms="4036" started-at="2016-12-18T14:28:27Z" finished-at="2016-12-18T14:28:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testAddPost()[pri:0, instance:TestAuthor@13fcdbd]" name="testAddPost" duration-ms="1843" started-at="2016-12-18T14:28:31Z" finished-at="2016-12-18T14:28:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddPost -->
+        <test-method status="PASS" signature="TearDown()[pri:0, instance:TestAuthor@13fcdbd]" name="TearDown" is-config="true" duration-ms="144" started-at="2016-12-18T14:28:33Z" finished-at="2016-12-18T14:28:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestAuthor@13fcdbd]" name="setUp" is-config="true" duration-ms="3876" started-at="2016-12-18T14:28:33Z" finished-at="2016-12-18T14:28:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testLoginAuthor()[pri:0, instance:TestAuthor@13fcdbd]" name="testLoginAuthor" duration-ms="8" started-at="2016-12-18T14:28:37Z" finished-at="2016-12-18T14:28:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginAuthor -->
+        <test-method status="PASS" signature="TearDown()[pri:0, instance:TestAuthor@13fcdbd]" name="TearDown" is-config="true" duration-ms="75" started-at="2016-12-18T14:28:37Z" finished-at="2016-12-18T14:28:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestAuthor@13fcdbd]" name="setUp" is-config="true" duration-ms="3784" started-at="2016-12-18T14:28:37Z" finished-at="2016-12-18T14:28:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testPublishPost()[pri:0, instance:TestAuthor@13fcdbd]" name="testPublishPost" duration-ms="2483" started-at="2016-12-18T14:28:41Z" finished-at="2016-12-18T14:28:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPublishPost -->
+        <test-method status="PASS" signature="TearDown()[pri:0, instance:TestAuthor@13fcdbd]" name="TearDown" is-config="true" duration-ms="2315" started-at="2016-12-18T14:28:43Z" finished-at="2016-12-18T14:28:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestAuthor@13fcdbd]" name="setUp" is-config="true" duration-ms="3413" started-at="2016-12-18T14:28:45Z" finished-at="2016-12-18T14:28:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testToTrash()[pri:0, instance:TestAuthor@13fcdbd]" name="testToTrash" duration-ms="1749" started-at="2016-12-18T14:28:49Z" finished-at="2016-12-18T14:28:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testToTrash -->
+        <test-method status="PASS" signature="TearDown()[pri:0, instance:TestAuthor@13fcdbd]" name="TearDown" is-config="true" duration-ms="2308" started-at="2016-12-18T14:28:50Z" finished-at="2016-12-18T14:28:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- TearDown -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestAuthor@13fcdbd]" name="afterTest" is-config="true" duration-ms="58" started-at="2016-12-18T14:31:03Z" finished-at="2016-12-18T14:31:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestContributer@1b52d12]" name="afterTest" is-config="true" duration-ms="16" started-at="2016-12-18T14:31:03Z" finished-at="2016-12-18T14:31:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestEditor@137cf78]" name="afterTest" is-config="true" duration-ms="14" started-at="2016-12-18T14:31:03Z" finished-at="2016-12-18T14:31:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestSubscriber@1b6d4ae]" name="afterTest" is-config="true" duration-ms="16" started-at="2016-12-18T14:31:03Z" finished-at="2016-12-18T14:31:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:TestWrongData@17c74e5]" name="afterTest" is-config="true" duration-ms="53" started-at="2016-12-18T14:31:03Z" finished-at="2016-12-18T14:31:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- TestAuthor -->
+      <class name="TestSubscriber">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestSubscriber@1b6d4ae]" name="setUp" is-config="true" duration-ms="3551" started-at="2016-12-18T14:29:28Z" finished-at="2016-12-18T14:29:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testAddComment()[pri:0, instance:TestSubscriber@1b6d4ae]" name="testAddComment" duration-ms="2000" started-at="2016-12-18T14:29:32Z" finished-at="2016-12-18T14:29:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddComment -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestSubscriber@1b6d4ae]" name="tearDown" is-config="true" duration-ms="2306" started-at="2016-12-18T14:29:34Z" finished-at="2016-12-18T14:29:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestSubscriber@1b6d4ae]" name="setUp" is-config="true" duration-ms="3443" started-at="2016-12-18T14:29:36Z" finished-at="2016-12-18T14:29:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testLoginSubscriber()[pri:0, instance:TestSubscriber@1b6d4ae]" name="testLoginSubscriber" duration-ms="13" started-at="2016-12-18T14:29:40Z" finished-at="2016-12-18T14:29:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginSubscriber -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestSubscriber@1b6d4ae]" name="tearDown" is-config="true" duration-ms="2326" started-at="2016-12-18T14:29:40Z" finished-at="2016-12-18T14:29:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestSubscriber -->
+      <class name="TestEditor">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestEditor@137cf78]" name="setUp" is-config="true" duration-ms="3461" started-at="2016-12-18T14:28:59Z" finished-at="2016-12-18T14:29:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testAddPost()[pri:0, instance:TestEditor@137cf78]" name="testAddPost" duration-ms="2400" started-at="2016-12-18T14:29:02Z" finished-at="2016-12-18T14:29:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddPost -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestEditor@137cf78]" name="tearDown" is-config="true" duration-ms="2366" started-at="2016-12-18T14:29:05Z" finished-at="2016-12-18T14:29:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestEditor@137cf78]" name="setUp" is-config="true" duration-ms="3106" started-at="2016-12-18T14:29:07Z" finished-at="2016-12-18T14:29:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testLoginEditor()[pri:0, instance:TestEditor@137cf78]" name="testLoginEditor" duration-ms="11" started-at="2016-12-18T14:29:10Z" finished-at="2016-12-18T14:29:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginEditor -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestEditor@137cf78]" name="tearDown" is-config="true" duration-ms="2315" started-at="2016-12-18T14:29:10Z" finished-at="2016-12-18T14:29:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestEditor@137cf78]" name="setUp" is-config="true" duration-ms="3466" started-at="2016-12-18T14:29:12Z" finished-at="2016-12-18T14:29:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testPublish()[pri:0, instance:TestEditor@137cf78]" name="testPublish" duration-ms="2305" started-at="2016-12-18T14:29:16Z" finished-at="2016-12-18T14:29:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPublish -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestEditor@137cf78]" name="tearDown" is-config="true" duration-ms="2340" started-at="2016-12-18T14:29:18Z" finished-at="2016-12-18T14:29:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="setUp()[pri:0, instance:TestEditor@137cf78]" name="setUp" is-config="true" duration-ms="3591" started-at="2016-12-18T14:29:21Z" finished-at="2016-12-18T14:29:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="testToTrash()[pri:0, instance:TestEditor@137cf78]" name="testToTrash" duration-ms="1903" started-at="2016-12-18T14:29:24Z" finished-at="2016-12-18T14:29:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testToTrash -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestEditor@137cf78]" name="tearDown" is-config="true" duration-ms="2330" started-at="2016-12-18T14:29:26Z" finished-at="2016-12-18T14:29:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestEditor -->
+      <class name="TestContributer">
+        <test-method status="PASS" signature="SetUp()[pri:0, instance:TestContributer@1b52d12]" name="SetUp" is-config="true" duration-ms="1583" started-at="2016-12-18T14:28:53Z" finished-at="2016-12-18T14:28:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SetUp -->
+        <test-method status="PASS" signature="testLoginContributer()[pri:0, instance:TestContributer@1b52d12]" name="testLoginContributer" duration-ms="2068" started-at="2016-12-18T14:28:54Z" finished-at="2016-12-18T14:28:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLoginContributer -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:TestContributer@1b52d12]" name="tearDown" is-config="true" duration-ms="2318" started-at="2016-12-18T14:28:56Z" finished-at="2016-12-18T14:28:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- TestContributer -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>

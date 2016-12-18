@@ -47,11 +47,4 @@ public class EditorPublish {
   public void setPublish() {
     driver.findElement(By.id("publish")).click();
   }
-
-//  /**
-//   * @return
-//   */
-//  public String getStatusPublishedPageUrl() {
-//    return driver.getCurrentUrl();
-//  }
 }

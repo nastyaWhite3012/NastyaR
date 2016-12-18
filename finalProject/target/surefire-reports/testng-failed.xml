@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test name="Command line test(failed)">
+    <classes>
+      <class name="TestContributer">
+        <methods>
+          <include name="SetUp"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TestContributer -->
+      <class name="TestAuthor">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="setUp"/>
+          <include name="TearDown"/>
+        </methods>
+      </class> <!-- TestAuthor -->
+      <class name="TestWrongData">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TestWrongData -->
+      <class name="TestEditor">
+        <methods>
+          <include name="afterTest"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="testToTrash"/>
+          <include name="beforeTst"/>
+        </methods>
+      </class> <!-- TestEditor -->
+      <class name="TestSubscriber">
+        <methods>
+          <include name="tearDown"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- TestSubscriber -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->

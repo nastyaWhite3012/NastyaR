@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.result,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.result td,table.result th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.result th {vertical-align:bottom}
+tr.param th {padding-left:1em;padding-right:1em}
+tr.param td {padding-left:.5em;padding-right:2em}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.result td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.result tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Command line test</td><td class="numi">25</td><td class="numi">25</td><td class="numi">0</td><td class="numi">0</td><td class="numi">156,8 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="passed" id="summary">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Command line test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">TestSubscriber</td><td><a href="#m1"><b>testAddComment</b>  </a></td><td class="numi">1</td><td>1482060572412</td><td class="numi">2000</td></tr>
+<tr class="passedeven"><td rowspan="1">TestAuthor</td><td><a href="#m2"><b>testAddPost</b>  </a></td><td class="numi">1</td><td>1482060511294</td><td class="numi">1843</td></tr>
+<tr class="passedodd"><td rowspan="1">TestEditor</td><td><a href="#m3"><b>testAddPost</b>  </a></td><td class="numi">1</td><td>1482060542726</td><td class="numi">2400</td></tr>
+<tr class="passedeven"><td rowspan="9">TestWrongData</td><td><a href="#m4"><b>testAuthorWrongPassword</b>  </a></td><td class="numi">1</td><td>1482060584050</td><td class="numi">1581</td></tr><tr class="passedeven"><td><a href="#m5"><b>testAuthorWrongUsername</b>  </a></td><td class="numi">1</td><td>1482060589356</td><td class="numi">1451</td></tr><tr class="passedeven"><td><a href="#m6"><b>testAuthorWrongUsernameAndPassword</b>  </a></td><td class="numi">1</td><td>1482060594472</td><td class="numi">1540</td></tr><tr class="passedeven"><td><a href="#m7"><b>testContributerWrongPassword</b>  </a></td><td class="numi">1</td><td>1482060599709</td><td class="numi">1624</td></tr><tr class="passedeven"><td><a href="#m8"><b>testContributerWrongUsername</b>  </a></td><td class="numi">1</td><td>1482060605159</td><td class="numi">1345</td></tr><tr class="passedeven"><td><a href="#m9"><b>testContributerWrongUsernameAndPassword</b>  </a></td><td class="numi">1</td><td>1482060610423</td><td class="numi">1446</td></tr><tr class="passedeven"><td><a href="#m10"><b>testEditorWrongPassword</b>  </a></td><td class="numi">1</td><td>1482060615756</td><td class="numi">1507</td></tr><tr class="passedeven"><td><a href="#m11"><b>testEditorWrongUsername</b>  </a></td><td class="numi">1</td><td>1482060621248</td><td class="numi">1394</td></tr><tr class="passedeven"><td><a href="#m12"><b>testEditorWrongUsernameAndPassword</b>  </a></td><td class="numi">1</td><td>1482060627132</td><td class="numi">1555</td></tr>
+<tr class="passedodd"><td rowspan="1">TestAuthor</td><td><a href="#m13"><b>testLoginAuthor</b>  </a></td><td class="numi">1</td><td>1482060517158</td><td class="numi">8</td></tr>
+<tr class="passedeven"><td rowspan="1">TestContributer</td><td><a href="#m14"><b>testLoginContributer</b>  </a></td><td class="numi">1</td><td>1482060534879</td><td class="numi">2068</td></tr>
+<tr class="passedodd"><td rowspan="1">TestEditor</td><td><a href="#m15"><b>testLoginEditor</b>  </a></td><td class="numi">1</td><td>1482060550599</td><td class="numi">11</td></tr>
+<tr class="passedeven"><td rowspan="1">TestSubscriber</td><td><a href="#m16"><b>testLoginSubscriber</b>  </a></td><td class="numi">1</td><td>1482060580162</td><td class="numi">13</td></tr>
+<tr class="passedodd"><td rowspan="1">TestEditor</td><td><a href="#m17"><b>testPublish</b>  </a></td><td class="numi">1</td><td>1482060556392</td><td class="numi">2305</td></tr>
+<tr class="passedeven"><td rowspan="1">TestAuthor</td><td><a href="#m18"><b>testPublishPost</b>  </a></td><td class="numi">1</td><td>1482060521026</td><td class="numi">2483</td></tr>
+<tr class="passedodd"><td rowspan="3">TestWrongData</td><td><a href="#m19"><b>testSubscriberWrongPassword</b>  </a></td><td class="numi">1</td><td>1482060633054</td><td class="numi">1596</td></tr><tr class="passedodd"><td><a href="#m20"><b>testSubscriberWrongUsername</b>  </a></td><td class="numi">1</td><td>1482060639077</td><td class="numi">6230</td></tr><tr class="passedodd"><td><a href="#m21"><b>testSubscriberWrongUsernameAndPassword</b>  </a></td><td class="numi">1</td><td>1482060649669</td><td class="numi">998</td></tr>
+<tr class="passedeven"><td rowspan="1">TestAuthor</td><td><a href="#m22"><b>testToTrash</b>  </a></td><td class="numi">1</td><td>1482060529238</td><td class="numi">1749</td></tr>
+<tr class="passedodd"><td rowspan="1">TestEditor</td><td><a href="#m23"><b>testToTrash</b>  </a></td><td class="numi">1</td><td>1482060564628</td><td class="numi">1903</td></tr>
+<tr class="passedeven"><td rowspan="2">TestWrongData</td><td><a href="#m24"><b>testWithoutNickname</b>  </a></td><td class="numi">1</td><td>1482060654416</td><td class="numi">1537</td></tr><tr class="passedeven"><td><a href="#m25"><b>testWithoutPassword</b>  </a></td><td class="numi">1</td><td>1482060659677</td><td class="numi">1563</td></tr>
+</table>
+<h1>Command line test</h1>
+<h2 id="m1">TestEditor:testPublish</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">TestWrongData:testWithoutNickname</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">TestWrongData:testWithoutPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">TestEditor:testToTrash</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">TestWrongData:testAuthorWrongUsername</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m6">TestAuthor:testLoginAuthor</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m7">TestSubscriber:testAddComment</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m8">TestWrongData:testContributerWrongUsername</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m9">TestWrongData:testSubscriberWrongUsernameAndPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m10">TestWrongData:testEditorWrongUsernameAndPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m11">TestContributer:testLoginContributer</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m12">TestWrongData:testAuthorWrongPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m13">TestWrongData:testEditorWrongPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m14">TestWrongData:testContributerWrongUsernameAndPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m15">TestWrongData:testAuthorWrongUsernameAndPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m16">TestWrongData:testSubscriberWrongUsername</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m17">TestEditor:testAddPost</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m18">TestAuthor:testAddPost</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m19">TestWrongData:testSubscriberWrongPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m20">TestAuthor:testPublishPost</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m21">TestWrongData:testEditorWrongUsername</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m22">TestSubscriber:testLoginSubscriber</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m23">TestAuthor:testToTrash</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m24">TestEditor:testLoginEditor</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m25">TestWrongData:testContributerWrongPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>

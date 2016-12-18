@@ -34,7 +34,7 @@ public class SubscriberHomePage {
    * @return page with added comment
    */
   public SubscriberPostComment enterPostComment() {
-    driver.findElement(By.id("submit")).click();
+    driver.findElement(By.className("comment-awaiting-moderation")).getText();
     return new SubscriberPostComment((ChromeDriver) driver);
   }
 }
