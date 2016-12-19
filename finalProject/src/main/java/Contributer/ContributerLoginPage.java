@@ -55,6 +55,11 @@ public class ContributerLoginPage {
     return new ContributerHomePage((ChromeDriver) driver);
   }
 
+  /**
+   * get error message
+   *
+   * @return text "Lost your password?"
+   */
   public String errorMessage() {
     return driver.findElement(By.linkText("Lost your password?")).getText();
   }

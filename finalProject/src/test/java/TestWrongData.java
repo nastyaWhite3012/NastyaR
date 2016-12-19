@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 import static org.testng.AssertJUnit.assertEquals;
 
 /**
- * Created by HP on 17.12.2016.
+ * Negative test for logging out for all users
  */
 public class TestWrongData {
   private ChromeDriver driver;
@@ -29,9 +29,8 @@ public class TestWrongData {
   private static String LOST_PASSWORD = "Lost your password?";
   private static String USERNAME_FIELD_IS_EMPTY = "ERROR: The username field is empty.";
   private static String PASSWORD_FIELD_IS_EMPTY = "ERROR: The password field is empty.";
-  private static String USER_NAME_IS_EMPTY = "";
 
-  @BeforeTest(timeOut = 5000)
+  @BeforeTest
   public void beforeTest() {
     connectionToDatabaseAuthor = new ConnectionToDatabaseAuthor();
     connectionToDatabaseContributer = new ConnectionToDatabaseContributer();
@@ -202,17 +201,6 @@ public class TestWrongData {
 
     assertEquals(PASSWORD_FIELD_IS_EMPTY, authorLoginPage.fieldIsEmpty());
   }
-
-//  @Test
-//  public void testEmpty() {
-//    authorLoginPage = new AuthorLoginPage(driver);
-//    authorLoginPage.openLoginPage();
-//    authorLoginPage.setUserName("");
-//    authorLoginPage.setPassword("");
-//    authorLoginPage.enterLoginPageAuthor();
-//
-//    assertEquals(USER_NAME_IS_EMPTY, authorLoginPage.usernameIsEmpty());
-//  }
 
   @AfterMethod
   public void tearDown() {

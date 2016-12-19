@@ -3,82 +3,116 @@ package Database;
 import java.sql.*;
 
 /**
- * Created by HP on 18.12.2016.
+ * Connect to Wordpress's database for editor
  */
 public class ConnectionToDatabaseEditor {
-  // JDBC URL, username and password of MySQL server
-  private static final String url = "jdbc:mysql://localhost:8889/wordpress";
-  private static final String user = "root";
-  private static final String password = "root";
-
-  // JDBC variables for opening and managing connection
-  private static Connection con;
-  private static Statement stmt;
-  private static ResultSet rs;
-
-  //  Queries queries = new Queries();
-  private String selectUsersTable = "select user_login from wordpress.wp_users";
-  private String selectUsermetaTable = "select user_id from wordpress.wp_usermeta";
-  String addingEditor = "INSERT INTO wordpress.wp_users (user_login, user_pass, user_nicename, " +
-      "user_email, display_name) VALUES ('editor', MD5('1'), 'editor', 'ergh@sdf.sdf', 'editor');";
-  String addingRoleToEditor = "INSERT INTO wordpress.wp_usermeta (user_id, meta_key, meta_value) " +
+  private static final String URL = "jdbc:mysql://localhost:8889/wordpress";
+  private static final String USER = "root";
+  private static final String PASSWORD = "root";
+  private static Connection CONNECTION;
+  private static Statement STATEMENT;
+  private static ResultSet RESULTSET;
+  private String SELECT_USERS_TABLE = "SELECT user_login FROM wordpress.wp_users";
+  private String SELECT_USERMETA_TABLE = "SELECT user_id FROM wordpress.wp_usermeta";
+  private String SELECT_POSTS_TABLE = "SELECT post_author FROM wordpress.wp_posts";
+  private String ADDING_EDITOR = "INSERT INTO wordpress.wp_users (user_login, user_pass, user_nicename, " +
+      "user_email, display_name) " +
+      "VALUES ('editor', MD5('1'), 'editor', 'ergh@sdf.sdf', 'editor');";
+  private String ADDING_ROLE_TO_EDITOR = "INSERT INTO wordpress.wp_usermeta (user_id, meta_key, meta_value) " +
       "VALUES (LAST_INSERT_ID(), 'wp_capabilities', 'a:1:{s:6:\"editor\";b:1;}');";
-  String deleteEditor = "DELETE FROM wordpress.wp_users WHERE user_login = 'editor'";
-  String deleteRoleEditor = "DELETE FROM wordpress.wp_usermeta WHERE user_id = (SELECT ID FROM wp_users WHERE " +
-      "user_login = 'editor')";
+  private String DELETE_EDITOR = "DELETE FROM wordpress.wp_users WHERE user_login = 'editor'";
+  private String DELETE_ROLE_EDITOR = "DELETE FROM wordpress.wp_usermeta WHERE user_id = (SELECT ID FROM wp_users " +
+      "WHERE user_login = 'editor')";
+  private String DELETE_DRAFT = "DELETE FROM wordpress.wp_posts WHERE post_author = (SELECT ID FROM wp_users " +
+      "WHERE user_login = 'editor')";
+  private String DELETE_AUTODRAFT = "DELETE FROM wordpress.wp_posts WHERE post_author = (SELECT ID FROM wp_users " +
+      "WHERE user_login = 'editor') AND post_title = 'Auto Draft'";
 
+  /**
+   * Open database CONNECTION to MySQL server,
+   * get STATEMENT object to execute query,
+   * execute SELECT and INSERT queries for
+   * adding editor to database,
+   * close CONNECTION, STATEMENT and RESULTSET
+   */
   public void addUser() {
     try {
-      // opening database connection to MySQL server
-      con = DriverManager.getConnection(url, user, password);
-      // getting Statement object to execute query
-      stmt = con.createStatement();
-      // executing SELECT query
-      rs = stmt.executeQuery(selectUsersTable);
-      rs = stmt.executeQuery(selectUsermetaTable);
-      // executing SELECT query
-      stmt.executeUpdate(addingEditor);
-      stmt.executeUpdate(addingRoleToEditor);
+      CONNECTION = DriverManager.getConnection(URL, USER, PASSWORD);
+      STATEMENT = CONNECTION.createStatement();
+      RESULTSET = STATEMENT.executeQuery(SELECT_USERS_TABLE);
+      RESULTSET = STATEMENT.executeQuery(SELECT_USERMETA_TABLE);
+      STATEMENT.executeUpdate(ADDING_EDITOR);
+      STATEMENT.executeUpdate(ADDING_ROLE_TO_EDITOR);
     } catch (SQLException sqlEx) {
       sqlEx.printStackTrace();
     } finally {
-      //close connection ,stmt and resultset here
       try {
-        con.close();
+        CONNECTION.close();
       } catch (SQLException se) { /*can't do anything */ }
       try {
-        stmt.close();
+        STATEMENT.close();
       } catch (SQLException se) { /*can't do anything */ }
       try {
-        rs.close();
+        RESULTSET.close();
       } catch (SQLException se) { /*can't do anything */ }
     }
   }
 
+  /**
+   * Open database CONNECTION to MySQL server,
+   * get STATEMENT object to execute query,
+   * execute SELECT and INSERT queries for
+   * deleting editor from database,
+   * close CONNECTION, STATEMENT and RESULTSET
+   */
   public void deleteUser() {
     try {
-      // opening database connection to MySQL server
-      con = DriverManager.getConnection(url, user, password);
-      // getting Statement object to execute query
-      stmt = con.createStatement();
-      // executing SELECT query
-      rs = stmt.executeQuery(selectUsersTable);
-      rs = stmt.executeQuery(selectUsermetaTable);
-      // executing SELECT query
-      stmt.executeUpdate(deleteRoleEditor);
-      stmt.executeUpdate(deleteEditor);
+      CONNECTION = DriverManager.getConnection(URL, USER, PASSWORD);
+      STATEMENT = CONNECTION.createStatement();
+      RESULTSET = STATEMENT.executeQuery(SELECT_USERS_TABLE);
+      RESULTSET = STATEMENT.executeQuery(SELECT_USERMETA_TABLE);
+      STATEMENT.executeUpdate(DELETE_ROLE_EDITOR);
+      STATEMENT.executeUpdate(DELETE_EDITOR);
     } catch (SQLException sqlEx) {
       sqlEx.printStackTrace();
     } finally {
-      //close connection ,stmt and resultset here
       try {
-        con.close();
+        CONNECTION.close();
       } catch (SQLException se) { /*can't do anything */ }
       try {
-        stmt.close();
+        STATEMENT.close();
       } catch (SQLException se) { /*can't do anything */ }
       try {
-        rs.close();
+        RESULTSET.close();
+      } catch (SQLException se) { /*can't do anything */ }
+    }
+  }
+
+  /**
+   * Open database CONNECTION to MySQL server,
+   * get STATEMENT object to execute query,
+   * execute SELECT and INSERT queries for
+   * deleting draft from database,
+   * close CONNECTION, STATEMENT and RESULTSET
+   */
+  public void deleteDraft() {
+    try {
+      CONNECTION = DriverManager.getConnection(URL, USER, PASSWORD);
+      STATEMENT = CONNECTION.createStatement();
+      RESULTSET = STATEMENT.executeQuery(SELECT_POSTS_TABLE);
+      STATEMENT.executeUpdate(DELETE_DRAFT);
+      STATEMENT.executeUpdate(DELETE_AUTODRAFT);
+    } catch (SQLException sqlEx) {
+      sqlEx.printStackTrace();
+    } finally {
+      try {
+        CONNECTION.close();
+      } catch (SQLException se) { /*can't do anything */ }
+      try {
+        STATEMENT.close();
+      } catch (SQLException se) { /*can't do anything */ }
+      try {
+        RESULTSET.close();
       } catch (SQLException se) { /*can't do anything */ }
     }
   }

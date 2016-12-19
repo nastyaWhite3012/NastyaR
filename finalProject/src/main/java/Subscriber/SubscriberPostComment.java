@@ -11,7 +11,7 @@ public class SubscriberPostComment {
   private WebDriver driver;
 
   /**
-   * Constructor
+   * Constructor of the page with publishing comment by subscriber
    *
    * @param driver - chrome driver
    */
@@ -45,10 +45,11 @@ public class SubscriberPostComment {
   public void addComment() {
     driver.findElement(By.className("submit")).click();
   }
+
   /**
    * find word "Replay" after added comment
    *
-   * @return "Reply"
+   * @return text "Reply"
    */
   public String getPostCommentPageUrl() {
     return driver.findElement(By.className("comment-awaiting-moderation")).getText();

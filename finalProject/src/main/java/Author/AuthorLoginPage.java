@@ -56,15 +56,21 @@ public class AuthorLoginPage {
     return new AuthorHomePage((ChromeDriver) driver);
   }
 
+  /**
+   * get error message
+   *
+   * @return text "Lost your password?"
+   */
   public String errorMessage() {
     return driver.findElement(By.linkText("Lost your password?")).getText();
   }
 
+  /**
+   * get error message
+   *
+   * @return text "login_error"
+   */
   public String fieldIsEmpty() {
-    return driver.findElement(By.id("login_error")).getText();
-  }
-
-  public String usernameIsEmpty() {
     return driver.findElement(By.id("login_error")).getText();
   }
 }

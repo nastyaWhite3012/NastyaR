@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 /**
- * Created by HP on 04.12.2016.
+ * Contains pages' elements with publishing post by editor
  */
 public class EditorPublish {
   private WebDriver driver;
@@ -23,8 +23,7 @@ public class EditorPublish {
    * go to posts
    */
   public void goToPosts() {
-    driver.findElement(By.partialLinkText("Post")).click();
-
+    driver.findElement(By.linkText("1 Post")).click();
   }
 
   /**

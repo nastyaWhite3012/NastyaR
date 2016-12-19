@@ -3,87 +3,118 @@ package Database;
 import java.sql.*;
 
 /**
- * Created by HP on 18.12.2016.
+ * Connect to Wordpress's database for author
  */
 public class ConnectionToDatabaseAuthor {
-  // JDBC URL, username and password of MySQL server
-  private static final String url = "jdbc:mysql://localhost:8889/wordpress";
-  private static final String user = "root";
-  private static final String password = "root";
-
-  // JDBC variables for opening and managing connection
-  private static Connection con;
-  private static Statement stmt;
-  private static ResultSet rs;
-
-  private String selectUsersTable = "select user_login from wordpress.wp_users";
-  private String selectUsermetaTable = "select user_id from wordpress.wp_usermeta";
-  String addingAuthor = "INSERT INTO wordpress.wp_users (user_login, user_pass, user_nicename, " +
-      "user_email, display_name) VALUES ('author', MD5('1'), 'author', 'sdfgh@sdfg.sdf', 'author');";
-  String addingRoleToAuthor = "INSERT INTO wordpress.wp_usermeta (user_id, meta_key, meta_value) " +
+  private static final String URL = "jdbc:mysql://localhost:8889/wordpress";
+  private static final String USER = "root";
+  private static final String PASSWORD = "root";
+  private static Connection CONNECTION;
+  private static Statement STATEMENT;
+  private static ResultSet RESULTSET;
+  private String SELECT_USERS_TABLE = "SELECT user_login FROM wordpress.wp_users";
+  private String SELECT_USERMETA_TABLE = "SELECT user_id FROM wordpress.wp_usermeta";
+  private String SELECT_POSTS_TABLE = "SELECT post_author FROM wordpress.wp_posts";
+  private String ADDING_AUTHOR = "INSERT INTO wordpress.wp_users (user_login, user_pass, user_nicename, " +
+      "user_email, display_name) " +
+      "VALUES ('author', MD5('1'), 'author', 'sdfgh@sdfg.sdf', 'author');";
+  private String ADDING_ROLE_AUTHOR = "INSERT INTO wordpress.wp_usermeta (user_id, meta_key, meta_value) " +
       "VALUES (LAST_INSERT_ID(), 'wp_capabilities', 'a:1:{s:6:\"author\";b:1;}');";
-  String deleteRoleAuthor = "DELETE FROM wordpress.wp_usermeta WHERE user_id = (SELECT ID FROM wp_users WHERE " +
-      "user_login = 'author')";
-  String deleteAuthor = "DELETE FROM wordpress.wp_users WHERE user_login = 'author'";
+  private String DELETE_ROLE_AUTHOR = "DELETE FROM wordpress.wp_usermeta " +
+      "WHERE user_id = (SELECT ID FROM wp_users WHERE user_login = 'author')";
+  private String DELETE_AUTHOR = "DELETE FROM wordpress.wp_users " +
+      "WHERE user_login = 'author'";
+  private String DELETE_DRAFT = "DELETE FROM wordpress.wp_posts WHERE post_author = (SELECT ID FROM wp_users " +
+      "WHERE user_login = 'author')";
+  private String DELETE_AUTODRAFT = "DELETE FROM wordpress.wp_posts WHERE post_author = (SELECT ID FROM wp_users " +
+      "WHERE user_login = 'author') AND post_title = 'Auto Draft'";
 
-  String addingAuthor2 = "INSERT INTO wordpress.wp_users (user_login, user_pass, user_nicename, " +
-      "user_email, display_name) VALUES ('author', MD5('1'), 'author2', 'sdfgh@sdfg.sdf', 'author2');";
-  String deleteRoleAuthor2 = "DELETE FROM wordpress.wp_usermeta WHERE user_id = (SELECT ID FROM wp_users WHERE " +
-      "user_login = 'author2')";
-  String deleteAuthor2 = "DELETE FROM wordpress.wp_users WHERE user_login = 'author'";
-
+  /**
+   * Open database CONNECTION to MySQL server,
+   * get STATEMENT object to execute query,
+   * execute SELECT and INSERT queries for
+   * adding author to database,
+   * close CONNECTION, STATEMENT and RESULTSET
+   */
   public void addUser() {
     try {
-      // opening database connection to MySQL server
-      con = DriverManager.getConnection(url, user, password);
-      // getting Statement object to execute query
-      stmt = con.createStatement();
-      // executing SELECT query
-      rs = stmt.executeQuery(selectUsersTable);
-      rs = stmt.executeQuery(selectUsermetaTable);
-      // executing SELECT query
-      stmt.executeUpdate(addingAuthor);
-      stmt.executeUpdate(addingRoleToAuthor);
+      CONNECTION = DriverManager.getConnection(URL, USER, PASSWORD);
+      STATEMENT = CONNECTION.createStatement();
+      RESULTSET = STATEMENT.executeQuery(SELECT_USERS_TABLE);
+      RESULTSET = STATEMENT.executeQuery(SELECT_USERMETA_TABLE);
+      STATEMENT.executeUpdate(ADDING_AUTHOR);
+      STATEMENT.executeUpdate(ADDING_ROLE_AUTHOR);
     } catch (SQLException sqlEx) {
       sqlEx.printStackTrace();
     } finally {
       //close connection ,stmt and resultset here
       try {
-        con.close();
+        CONNECTION.close();
       } catch (SQLException se) { /*can't do anything */ }
       try {
-        stmt.close();
+        STATEMENT.close();
       } catch (SQLException se) { /*can't do anything */ }
       try {
-        rs.close();
+        RESULTSET.close();
       } catch (SQLException se) { /*can't do anything */ }
     }
   }
 
+  /**
+   * Open database CONNECTION to MySQL server,
+   * get STATEMENT object to execute query,
+   * execute SELECT and INSERT queries for
+   * deleting author from database,
+   * close CONNECTION, STATEMENT and RESULTSET
+   */
   public void deleteUser() {
     try {
-      // opening database connection to MySQL server
-      con = DriverManager.getConnection(url, user, password);
-      // getting Statement object to execute query
-      stmt = con.createStatement();
-      // executing SELECT query
-      rs = stmt.executeQuery(selectUsersTable);
-      rs = stmt.executeQuery(selectUsermetaTable);
-      // executing SELECT query
-      stmt.executeUpdate(deleteRoleAuthor);
-      stmt.executeUpdate(deleteAuthor);
+      CONNECTION = DriverManager.getConnection(URL, USER, PASSWORD);
+      STATEMENT = CONNECTION.createStatement();
+      RESULTSET = STATEMENT.executeQuery(SELECT_USERS_TABLE);
+      RESULTSET = STATEMENT.executeQuery(SELECT_USERMETA_TABLE);
+      STATEMENT.executeUpdate(DELETE_ROLE_AUTHOR);
+      STATEMENT.executeUpdate(DELETE_AUTHOR);
     } catch (SQLException sqlEx) {
       sqlEx.printStackTrace();
     } finally {
-      //close connection ,stmt and resultset here
       try {
-        con.close();
+        CONNECTION.close();
       } catch (SQLException se) { /*can't do anything */ }
       try {
-        stmt.close();
+        STATEMENT.close();
       } catch (SQLException se) { /*can't do anything */ }
       try {
-        rs.close();
+        RESULTSET.close();
+      } catch (SQLException se) { /*can't do anything */ }
+    }
+  }
+
+  /**
+   * Open database CONNECTION to MySQL server,
+   * get STATEMENT object to execute query,
+   * execute SELECT and INSERT queries for
+   * deleting draft from database,
+   * close CONNECTION, STATEMENT and RESULTSET
+   */
+  public void deleteDraft() {
+    try {
+      CONNECTION = DriverManager.getConnection(URL, USER, PASSWORD);
+      STATEMENT = CONNECTION.createStatement();
+      RESULTSET = STATEMENT.executeQuery(SELECT_POSTS_TABLE);
+      STATEMENT.executeUpdate(DELETE_DRAFT);
+      STATEMENT.executeUpdate(DELETE_AUTODRAFT);
+    } catch (SQLException sqlEx) {
+      sqlEx.printStackTrace();
+    } finally {
+      try {
+        CONNECTION.close();
+      } catch (SQLException se) { /*can't do anything */ }
+      try {
+        STATEMENT.close();
+      } catch (SQLException se) { /*can't do anything */ }
+      try {
+        RESULTSET.close();
       } catch (SQLException se) { /*can't do anything */ }
     }
   }

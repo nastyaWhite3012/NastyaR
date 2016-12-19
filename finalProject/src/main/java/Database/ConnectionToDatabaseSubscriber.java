@@ -3,82 +3,114 @@ package Database;
 import java.sql.*;
 
 /**
- * Created by HP on 18.12.2016.
+ * Connect to Wordpress's database for subscriber
  */
 public class ConnectionToDatabaseSubscriber {
-  // JDBC URL, username and password of MySQL server
-  private static final String url = "jdbc:mysql://localhost:8889/wordpress";
-  private static final String user = "root";
-  private static final String password = "root";
-
-  // JDBC variables for opening and managing connection
-  private static Connection con;
-  private static Statement stmt;
-  private static ResultSet rs;
-
-  //  Queries queries = new Queries();
-  private String selectUsersTable = "select user_login from wordpress.wp_users";
-  private String selectUsermetaTable = "select user_id from wordpress.wp_usermeta";
-  String addingSubscriber = "INSERT INTO wordpress.wp_users (user_login, user_pass, user_nicename, " +
-      "user_email, display_name) VALUES ('subscriber', MD5('1'), 'subscriber', 'kjhgf@kjhg.erfg', 'subscriber');";
-  String addingRoleToSubscriber = "INSERT INTO wordpress.wp_usermeta (user_id, meta_key, meta_value) " +
+  private static final String URL = "jdbc:mysql://localhost:8889/wordpress";
+  private static final String USER = "root";
+  private static final String PASSWORD = "root";
+  private static Connection CONNECTION;
+  private static Statement STATEMENT;
+  private static ResultSet RESULTSET;
+  private String SELECT_USERS_TABLE = "SELECT user_login FROM wordpress.wp_users";
+  private String SELECT_USERMETA_TABLE = "SELECT user_id FROM wordpress.wp_usermeta";
+  private String SELECT_COMMENTS_TABLE = "SELECT comment_post_ID FROM wordpress.wp_comments";
+  private String ADDING_SUBSCRIBER = "INSERT INTO wordpress.wp_users (user_login, user_pass, user_nicename, " +
+      "user_email, display_name) " +
+      "VALUES ('subscriber', MD5('1'), 'subscriber', 'kjhgf@kjhg.erfg', 'subscriber');";
+  private String ADDING_ROLE_TO_SUBSCRIBER = "INSERT INTO wordpress.wp_usermeta (user_id, meta_key, meta_value) " +
       "VALUES (LAST_INSERT_ID(), 'wp_capabilities', 'a:1:{s:10:\"subscriber\";b:1;}');";
-  String deleteSubscriber = "DELETE FROM wordpress.wp_users WHERE user_login = 'subscriber'";
-  String deleteRoleSubscriber = "DELETE FROM wordpress.wp_usermeta WHERE user_id = (SELECT ID FROM wp_users WHERE " +
-      "user_login = 'subscriber')";
+  private String DELETE_SUBSCRIBER = "DELETE FROM wordpress.wp_users WHERE user_login = 'subscriber'";
+  private String DELETE_ROLE_SUBSCRIBER = "DELETE FROM wordpress.wp_usermeta WHERE user_id = (SELECT ID FROM wp_users " +
+      "WHERE user_login = 'subscriber')";
+  private String DELETE_COMMENT = "DELETE FROM wordpress.wp_comments WHERE user_id = (SELECT ID FROM wp_users " +
+      "WHERE user_login = 'subscriber')";
 
+  /**
+   * Open database CONNECTION to MySQL server,
+   * get STATEMENT object to execute query,
+   * execute SELECT and INSERT queries for
+   * adding subscriber to database,
+   * close CONNECTION, STATEMENT and RESULTSET
+   */
   public void addUser() {
     try {
-      // opening database connection to MySQL server
-      con = DriverManager.getConnection(url, user, password);
-      // getting Statement object to execute query
-      stmt = con.createStatement();
+      CONNECTION = DriverManager.getConnection(URL, USER, PASSWORD);
+      STATEMENT = CONNECTION.createStatement();
+      RESULTSET = STATEMENT.executeQuery(SELECT_USERS_TABLE);
+      RESULTSET = STATEMENT.executeQuery(SELECT_USERMETA_TABLE);
       // executing SELECT query
-      rs = stmt.executeQuery(selectUsersTable);
-      rs = stmt.executeQuery(selectUsermetaTable);
-      // executing SELECT query
-      stmt.executeUpdate(addingSubscriber);
-      stmt.executeUpdate(addingRoleToSubscriber);
+      STATEMENT.executeUpdate(ADDING_SUBSCRIBER);
+      STATEMENT.executeUpdate(ADDING_ROLE_TO_SUBSCRIBER);
     } catch (SQLException sqlEx) {
       sqlEx.printStackTrace();
     } finally {
-      //close connection ,stmt and resultset here
       try {
-        con.close();
+        CONNECTION.close();
       } catch (SQLException se) { /*can't do anything */ }
       try {
-        stmt.close();
+        STATEMENT.close();
       } catch (SQLException se) { /*can't do anything */ }
       try {
-        rs.close();
+        RESULTSET.close();
       } catch (SQLException se) { /*can't do anything */ }
     }
   }
 
+  /**
+   * Open database CONNECTION to MySQL server,
+   * get STATEMENT object to execute query,
+   * execute SELECT and INSERT queries for
+   * deleting subscriber from database,
+   * close CONNECTION, STATEMENT and RESULTSET
+   */
   public void deleteUser() {
     try {
-      // opening database connection to MySQL server
-      con = DriverManager.getConnection(url, user, password);
-      // getting Statement object to execute query
-      stmt = con.createStatement();
-      // executing SELECT query
-      rs = stmt.executeQuery(selectUsersTable);
-      rs = stmt.executeQuery(selectUsermetaTable);
-      // executing SELECT query
-      stmt.executeUpdate(deleteRoleSubscriber);
-      stmt.executeUpdate(deleteSubscriber);
+      CONNECTION = DriverManager.getConnection(URL, USER, PASSWORD);
+      STATEMENT = CONNECTION.createStatement();
+      RESULTSET = STATEMENT.executeQuery(SELECT_USERS_TABLE);
+      RESULTSET = STATEMENT.executeQuery(SELECT_USERMETA_TABLE);
+      STATEMENT.executeUpdate(DELETE_ROLE_SUBSCRIBER);
+      STATEMENT.executeUpdate(DELETE_SUBSCRIBER);
     } catch (SQLException sqlEx) {
       sqlEx.printStackTrace();
     } finally {
-      //close connection ,stmt and resultset here
       try {
-        con.close();
+        CONNECTION.close();
       } catch (SQLException se) { /*can't do anything */ }
       try {
-        stmt.close();
+        STATEMENT.close();
       } catch (SQLException se) { /*can't do anything */ }
       try {
-        rs.close();
+        RESULTSET.close();
+      } catch (SQLException se) { /*can't do anything */ }
+    }
+  }
+
+  /**
+   * Open database CONNECTION to MySQL server,
+   * get STATEMENT object to execute query,
+   * execute SELECT and INSERT queries for
+   * deleting comment from database,
+   * close CONNECTION, STATEMENT and RESULTSET
+   */
+  public void deleteComment() {
+    try {
+      CONNECTION = DriverManager.getConnection(URL, USER, PASSWORD);
+      STATEMENT = CONNECTION.createStatement();
+      RESULTSET = STATEMENT.executeQuery(SELECT_COMMENTS_TABLE);
+      STATEMENT.executeUpdate(DELETE_COMMENT);
+    } catch (SQLException sqlEx) {
+      sqlEx.printStackTrace();
+    } finally {
+      try {
+        CONNECTION.close();
+      } catch (SQLException se) { /*can't do anything */ }
+      try {
+        STATEMENT.close();
+      } catch (SQLException se) { /*can't do anything */ }
+      try {
+        RESULTSET.close();
       } catch (SQLException se) { /*can't do anything */ }
     }
   }
