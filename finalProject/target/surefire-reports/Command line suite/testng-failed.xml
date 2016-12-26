@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" verbose="0" name="Failed suite [Command line suite]" parallel="all">
+  <test name="Command line test(failed)" parallel="all">
+    <classes>
+      <class name="Contributer.TestLogOutContributer">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="tearDown"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Contributer.TestLogOutContributer -->
+      <class name="Subscriber.TestLoginSubscriber">
+        <methods>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+          <include name="tearDown"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- Subscriber.TestLoginSubscriber -->
+      <class name="Contributer.TestLoginContributer">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+        </methods>
+      </class> <!-- Contributer.TestLoginContributer -->
+      <class name="Author.TestPublishPost">
+        <methods>
+          <include name="testPublishPost"/>
+          <include name="beforeTest"/>
+          <include name="afterTest"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Author.TestPublishPost -->
+      <class name="Author.TestLoginAuthor">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="tearDown"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Author.TestLoginAuthor -->
+      <class name="Author.TestLogOut">
+        <methods>
+          <include name="tearDown"/>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- Author.TestLogOut -->
+      <class name="Editor.TestDeletePost">
+        <methods>
+          <include name="testDeletePost"/>
+          <include name="beforeMethod"/>
+          <include name="tearDown"/>
+          <include name="afterTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Editor.TestDeletePost -->
+      <class name="Editor.TestPublishPost">
+        <methods>
+          <include name="testPublishPost"/>
+          <include name="beforeMethod"/>
+          <include name="afterTest"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Editor.TestPublishPost -->
+      <class name="Editor.TestLogOut">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- Editor.TestLogOut -->
+      <class name="Editor.TestLoginEditor">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- Editor.TestLoginEditor -->
+      <class name="Author.TestDeletePost">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="setUp"/>
+          <include name="afterTest"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- Author.TestDeletePost -->
+      <class name="TestWrongData">
+        <methods>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- TestWrongData -->
+      <class name="Subscriber.TestLogOut">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- Subscriber.TestLogOut -->
+      <class name="Author.TestAddDraft">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterTest"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- Author.TestAddDraft -->
+      <class name="Subscriber.TestAddComment">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="afterTest"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- Subscriber.TestAddComment -->
+      <class name="Editor.TestAddDraft">
+        <methods>
+          <include name="beforeMethod"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="afterMethod"/>
+        </methods>
+      </class> <!-- Editor.TestAddDraft -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->

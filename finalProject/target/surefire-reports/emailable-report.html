@@ -1,0 +1,177 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG:  Unit Test</title>
+<style type="text/css">
+table caption,table.info_table,table.result,table.passed,table.failed {margin-bottom:10px;border:1px solid #000099;border-collapse:collapse;empty-cells:show;}
+table.info_table td,table.info_table th,table.result td,table.result th,table.passed td,table.passed th,table.failed td,table.failed th {
+border:1px solid #000099;padding:.25em .5em .25em .5em
+}
+table.result th {vertical-align:bottom}
+tr.param th {padding-left:1em;padding-right:1em}
+tr.param td {padding-left:.5em;padding-right:2em}
+td.numi,th.numi,td.numi_attn {
+text-align:right
+}
+tr.total td {font-weight:bold}
+table caption {
+text-align:center;font-weight:bold;
+}
+table.passed tr.stripe td,table tr.passedodd td {background-color: #00AA00;}
+table.passed td,table tr.passedeven td {background-color: #33FF33;}
+table.passed tr.stripe td,table tr.skippedodd td {background-color: #cccccc;}
+table.passed td,table tr.skippedodd td {background-color: #dddddd;}
+table.failed tr.stripe td,table tr.failedodd td,table.result td.numi_attn {background-color: #FF3333;}
+table.failed td,table tr.failedeven td,table.result tr.stripe td.numi_attn {background-color: #DD0000;}
+tr.stripe td,tr.stripe th {background-color: #E6EBF9;}
+p.totop {font-size:85%;text-align:center;border-bottom:2px black solid}
+div.shootout {padding:2em;border:3px #4854A8 solid}
+</style>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" class="result">
+<tr><th>Test</th><th class="numi">Methods<br/>Passed</th><th class="numi">Scenarios<br/>Passed</th><th class="numi"># skipped</th><th class="numi"># failed</th><th class="numi">Total<br/>Time</th><th class="numi">Included<br/>Groups</th><th class="numi">Excluded<br/>Groups</th></tr>
+<tr><td style="text-align:left;padding-right:2em">Command line test</td><td class="numi">26</td><td class="numi">26</td><td class="numi">0</td><td class="numi_attn">3</td><td class="numi">302,1 seconds</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="passed" id="summary">
+<tr><th>Class</th><th>Method</th><th># of<br/>Scenarios</th><th>Start</th><th>Time<br/>(ms)</th></tr>
+<tr><th colspan="4">Command line test &#8212; failed</th></tr>
+<tr class="failedodd"><td rowspan="1">Editor.TestDeletePost</td><td><a href="#m1"><b>testDeletePost</b>  </a></td><td class="numi">1</td><td>1482157609711</td><td class="numi">619</td></tr>
+<tr class="failedeven"><td rowspan="1">Author.TestPublishPost</td><td><a href="#m2"><b>testPublishPost</b>  </a></td><td class="numi">1</td><td>1482157656168</td><td class="numi">41070</td></tr>
+<tr class="failedodd"><td rowspan="1">Editor.TestPublishPost</td><td><a href="#m3"><b>testPublishPost</b>  </a></td><td class="numi">1</td><td>1482157702160</td><td class="numi">40589</td></tr>
+<tr><th colspan="4">Command line test &#8212; passed</th></tr>
+<tr class="passedodd"><td rowspan="1">Subscriber.TestAddComment</td><td><a href="#m4"><b>testAddComment</b>  </a></td><td class="numi">1</td><td>1482157564096</td><td class="numi">10243</td></tr>
+<tr class="passedeven"><td rowspan="1">Editor.TestAddDraft</td><td><a href="#m5"><b>testAddDraft</b>  </a></td><td class="numi">1</td><td>1482157582385</td><td class="numi">2966</td></tr>
+<tr class="passedodd"><td rowspan="1">Author.TestAddDraft</td><td><a href="#m6"><b>testPublishDraft</b>  </a></td><td class="numi">1</td><td>1482157590530</td><td class="numi">5959</td></tr>
+<tr class="passedeven"><td rowspan="1">Author.TestDeletePost</td><td><a href="#m7"><b>testDeletePost</b>  </a></td><td class="numi">1</td><td>1482157601435</td><td class="numi">709</td></tr>
+<tr class="passedodd"><td rowspan="1">Author.TestLogOut</td><td><a href="#m8"><b>testLoginAuthor</b>  </a></td><td class="numi">1</td><td>1482157615671</td><td class="numi">1059</td></tr>
+<tr class="passedeven"><td rowspan="1">Editor.TestLogOut</td><td><a href="#m9"><b>testLoginEditor</b>  </a></td><td class="numi">1</td><td>1482157622097</td><td class="numi">954</td></tr>
+<tr class="passedodd"><td rowspan="1">Subscriber.TestLogOut</td><td><a href="#m10"><b>testLoginEditor</b>  </a></td><td class="numi">1</td><td>1482157626411</td><td class="numi">1159</td></tr>
+<tr class="passedeven"><td rowspan="1">Contributer.TestLogOutContributer</td><td><a href="#m11"><b>testLoginContributer</b>  </a></td><td class="numi">1</td><td>1482157632965</td><td class="numi">542</td></tr>
+<tr class="passedodd"><td rowspan="1">Author.TestLoginAuthor</td><td><a href="#m12"><b>testLoginAuthor</b>  </a></td><td class="numi">1</td><td>1482157637026</td><td class="numi">7</td></tr>
+<tr class="passedeven"><td rowspan="1">Contributer.TestLoginContributer</td><td><a href="#m13"><b>testLoginContributer</b>  </a></td><td class="numi">1</td><td>1482157638903</td><td class="numi">2032</td></tr>
+<tr class="passedodd"><td rowspan="1">Editor.TestLoginEditor</td><td><a href="#m14"><b>testLoginEditor</b>  </a></td><td class="numi">1</td><td>1482157646625</td><td class="numi">10</td></tr>
+<tr class="passedeven"><td rowspan="1">Subscriber.TestLoginSubscriber</td><td><a href="#m15"><b>testLoginSubscriber</b>  </a></td><td class="numi">1</td><td>1482157651768</td><td class="numi">19</td></tr>
+<tr class="passedodd"><td rowspan="14">TestWrongData</td><td><a href="#m16"><b>testAuthorWrongPassword</b>  </a></td><td class="numi">1</td><td>1482157746385</td><td class="numi">1427</td></tr><tr class="passedodd"><td><a href="#m17"><b>testAuthorWrongUsername</b>  </a></td><td class="numi">1</td><td>1482157751417</td><td class="numi">1373</td></tr><tr class="passedodd"><td><a href="#m18"><b>testAuthorWrongUsernameAndPassword</b>  </a></td><td class="numi">1</td><td>1482157756389</td><td class="numi">1375</td></tr><tr class="passedodd"><td><a href="#m19"><b>testContributerWrongPassword</b>  </a></td><td class="numi">1</td><td>1482157761375</td><td class="numi">1562</td></tr><tr class="passedodd"><td><a href="#m20"><b>testContributerWrongUsername</b>  </a></td><td class="numi">1</td><td>1482157766556</td><td class="numi">1382</td></tr><tr class="passedodd"><td><a href="#m21"><b>testContributerWrongUsernameAndPassword</b>  </a></td><td class="numi">1</td><td>1482157769327</td><td class="numi">1515</td></tr><tr class="passedodd"><td><a href="#m22"><b>testEditorWrongPassword</b>  </a></td><td class="numi">1</td><td>1482157774428</td><td class="numi">1364</td></tr><tr class="passedodd"><td><a href="#m23"><b>testEditorWrongUsername</b>  </a></td><td class="numi">1</td><td>1482157779426</td><td class="numi">1371</td></tr><tr class="passedodd"><td><a href="#m24"><b>testEditorWrongUsernameAndPassword</b>  </a></td><td class="numi">1</td><td>1482157782192</td><td class="numi">1406</td></tr><tr class="passedodd"><td><a href="#m25"><b>testSubscriberWrongPassword</b>  </a></td><td class="numi">1</td><td>1482157787208</td><td class="numi">1350</td></tr><tr class="passedodd"><td><a href="#m26"><b>testSubscriberWrongUsername</b>  </a></td><td class="numi">1</td><td>1482157792187</td><td class="numi">1352</td></tr><tr class="passedodd"><td><a href="#m27"><b>testSubscriberWrongUsernameAndPassword</b>  </a></td><td class="numi">1</td><td>1482157797099</td><td class="numi">1396</td></tr><tr class="passedodd"><td><a href="#m28"><b>testWithoutNickname</b>  </a></td><td class="numi">1</td><td>1482157802072</td><td class="numi">1379</td></tr><tr class="passedodd"><td><a href="#m29"><b>testWithoutPassword</b>  </a></td><td class="numi">1</td><td>1482157807039</td><td class="numi">1356</td></tr>
+</table>
+<h1>Command line test</h1>
+<h2 id="m1">Editor.TestPublishPost:testPublishPost</h2>
+<div style="padding-left:3em">
+<p>no such element: Unable to locate element: {&quot;method&quot;:&quot;class name&quot;,&quot;selector&quot;:&quot;draft&quot;}
+  (Session info: chrome=55.0.2883.87)
+  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 40.08 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;ProBook&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_60&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\HP\AppData\Local\Temp\scoped_dir13852_13415}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=55.0.2883.87, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 7da8388e88d4a0b5b8deb90deec14b51
+*** Element info: {Using=class name, value=draft}</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:457)
+<br/>at org.openqa.selenium.By$ByClassName.findElement(By.java:391)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
+<br/>at Editor.EditorPublish.goToDraft(EditorPublish.java:33)
+<br/>at Editor.TestPublishPost.testPublishPost(TestPublishPost.java:54)
+<br/>35 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">Editor.TestDeletePost:testDeletePost</h2>
+<div style="padding-left:3em">
+<p>expected:&lt;Trash (1)&gt; but was:&lt;Trash (2)&gt;</p>
+org.testng.AssertJUnit.assertEquals(AssertJUnit.java:101)
+<br/>at org.testng.AssertJUnit.assertEquals(AssertJUnit.java:108)
+<br/>at Editor.TestDeletePost.testDeletePost(TestDeletePost.java:63)
+<br/>35 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">Author.TestPublishPost:testPublishPost</h2>
+<div style="padding-left:3em">
+<p>no such element: Unable to locate element: {&quot;method&quot;:&quot;class name&quot;,&quot;selector&quot;:&quot;row-title&quot;}
+  (Session info: chrome=55.0.2883.87)
+  (Driver info: chromedriver=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed),platform=Windows NT 6.1.7600 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 40.47 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.0.1&apos;, revision: &apos;1969d75&apos;, time: &apos;2016-10-18 09:49:13 -0700&apos;
+System info: host: &apos;ProBook&apos;, ip: &apos;192.168.56.1&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.1&apos;, java.version: &apos;1.8.0_60&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities [{applicationCacheEnabled=false, rotatable=false, mobileEmulationEnabled=false, networkConnectionEnabled=false, chrome={chromedriverVersion=2.25.426923 (0390b88869384d6eb0d5d09729679f934aab9eed), userDataDir=C:\Users\HP\AppData\Local\Temp\scoped_dir4012_16219}, takesHeapSnapshot=true, pageLoadStrategy=normal, databaseEnabled=false, handlesAlerts=true, hasTouchScreen=false, version=55.0.2883.87, platform=XP, browserConnectionEnabled=false, nativeEvents=true, acceptSslCerts=true, locationContextEnabled=true, webStorageEnabled=true, browserName=chrome, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: e9f980d6c5b5c7a23ad1d607177d1e21
+*** Element info: {Using=class name, value=row-title}</p>
+sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+<br/>at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+<br/>at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+<br/>at java.lang.reflect.Constructor.newInstance(Constructor.java:422)
+<br/>at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+<br/>at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElementByClassName(RemoteWebDriver.java:457)
+<br/>at org.openqa.selenium.By$ByClassName.findElement(By.java:391)
+<br/>at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:360)
+<br/>at Author.AuthorPublishPost.openPost(AuthorPublishPost.java:33)
+<br/>at Author.TestPublishPost.testPublishPost(TestPublishPost.java:55)
+<br/>35 lines not shown
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m4">TestWrongData:testSubscriberWrongPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m5">Author.TestLogOut:testLoginAuthor</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m6">Author.TestDeletePost:testDeletePost</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m7">TestWrongData:testContributerWrongPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m8">TestWrongData:testEditorWrongUsernameAndPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m9">TestWrongData:testWithoutPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m10">TestWrongData:testAuthorWrongUsername</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m11">Subscriber.TestAddComment:testAddComment</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m12">TestWrongData:testAuthorWrongPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m13">TestWrongData:testContributerWrongUsernameAndPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m14">TestWrongData:testContributerWrongUsername</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m15">TestWrongData:testWithoutNickname</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m16">TestWrongData:testEditorWrongPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m17">TestWrongData:testAuthorWrongUsernameAndPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m18">Author.TestAddDraft:testPublishDraft</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m19">Contributer.TestLogOutContributer:testLoginContributer</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m20">Subscriber.TestLoginSubscriber:testLoginSubscriber</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m21">Editor.TestAddDraft:testAddDraft</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m22">TestWrongData:testEditorWrongUsername</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m23">Author.TestLoginAuthor:testLoginAuthor</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m24">TestWrongData:testSubscriberWrongUsername</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m25">Subscriber.TestLogOut:testLoginEditor</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m26">Editor.TestLogOut:testLoginEditor</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m27">TestWrongData:testSubscriberWrongUsernameAndPassword</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m28">Contributer.TestLoginContributer:testLoginContributer</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m29">Editor.TestLoginEditor:testLoginEditor</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+</body></html>
